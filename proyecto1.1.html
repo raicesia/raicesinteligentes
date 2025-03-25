@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raíces Inteligentes - Impulsa tu Futuro con IA</title>
+    <meta name="description"
+        content="Raíces Inteligentes: Soluciones de Inteligencia Artificial para empresas. Automatización, análisis predictivo, y más.">
+    <style>
+        /* Fuente y estilos generales */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; /* Un gris claro y elegante */
+            color: #333; /* Texto más oscuro para legibilidad */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Estilos para encabezado y navegación */
+        header {
+            background: linear-gradient(to right, #1a237e, #5c6bc0); /* Azul profundo a un azul más claro */
+            color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 1.5rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #bbdefb; /* Un azul muy claro al hacer hover */
+        }
+
+        /* Hero section */
+        #hero {
+            background: url('img/futuristic-city.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 7rem 0;
+            position: relative;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 35, 126, 0.7); /* Mismo azul que el header, con opacidad */
+        }
+
+        #hero>* {
+            z-index: 1;
+            position: relative;
+        }
+
+        #hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #03a9f4; /* Un azul brillante para llamar la atención */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0288d1;
+        }
+
+        /* Secciones de contenido */
+        section {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #services h2,
+        #about h2,
+        #contact h2,
+        #cases h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #1a237e; /* Azul para los títulos de sección */
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #5c6bc0; /* Azul más claro para títulos de tarjetas */
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Formulario de contacto */
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        #contact input,
+        #contact textarea {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.3rem;
+            font-family: inherit;
+        }
+
+        #contact button {
+            background-color: #1a237e;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact button:hover {
+            background-color: #3f51b5;
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* Botones flotantes */
+        .floating-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #03a9f4;
+            color: #fff;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .floating-button:hover {
+            background-color: #0288d1;
+        }
+
+        .whatsapp-button {
+            background-color: #25d366;
+        }
+
+        .chatbot-button {
+            background-color: #ff9800; /* Un naranja atractivo */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">Raíces Inteligentes</h1>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#cases">Casos de Éxito</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <h1>Impulsa tu Negocio al Futuro con IA</h1>
+        <p>Transformamos tu empresa con soluciones de Inteligencia Artificial que optimizan procesos, mejoran la toma de
+            decisiones y crean experiencias de cliente excepcionales.</p>
+        <a href="#contact" class="cta-button">Solicita una Consulta Gratuita</a>
+    </section>
+
+    <section id="services">
+        <h2>Nuestros Servicios de Inteligencia Artificial</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <a href="#servicio-automatizacion">
+                    <h3>Automatización Inteligente de Procesos</h3>
+                </a>
+                <p>
+                    Implementamos IA para automatizar tareas repetitivas, flujos de trabajo complejos y la gestión de
+                    documentos.
+                </p>
+                <p>
+                    <strong>Ejemplo:</strong> Una empresa de logística redujo los tiempos de procesamiento de envíos en un
+                    40% al automatizar la clasificación y el seguimiento de paquetes con IA.
+                </p>
+            </div>
+            <div class="service-card">
+                <a href="#servicio-atencion-cliente">
+                    <h3>Atención al Cliente con Chatbots IA</h3>
+                </a>
+                <p>
+                    Desarrollamos chatbots inteligentes que brindan soporte 24/7, responden preguntas frecuentes y
+                    mejoran la satisfacción del cliente.
+                </p>
+                <p>
+                    <strong>Ejemplo:</strong> Un banco mejoró su puntuación de satisfacción del cliente en un 25% al
+                    implementar un chatbot que resuelve consultas y gestiona transacciones básicas.
+                </p>
+            </div>
+            <div class="service-card">
+                <a href="#servicio-analitica-predictiva">
+                    <h3>Analítica Predictiva Avanzada</h3>
+                </a>
+                <p>
+                    Utilizamos IA para analizar grandes volúmenes de datos, predecir tendencias, optimizar estrategias y
+                    anticipar las necesidades del mercado.
+                </p>
+                <p>
+                    <strong>Ejemplo:</strong> Una cadena de retail aumentó sus ventas en un 15% al predecir la demanda de
+                    productos y optimizar el inventario con analítica predictiva.
+                </p>
+            </div>
+            <div class="service-card">
+                <a href="#servicio-vision-artificial">
+                    <h3>Visión Artificial y Análisis de Imágenes</h3>
+                </a>
+                <p>
+                    Aplicamos IA para el reconocimiento de objetos, análisis de imágenes y video, control de calidad
+                    automatizado y sistemas de seguridad inteligentes.
+                </p>
+                <p>
+                    <strong>Ejemplo:</strong> Una fábrica redujo los defectos de producción en un 20% al implementar un
+                    sistema de visión artificial que inspecciona los productos en la línea de montaje.
+                </p>
+            </div>
+            <div class="service-card">
+                <a href="#servicio-ia-manufactura">
+                    <h3>Optimización de la Manufactura con IA</h3>
+                </a>
+                <p>
+                    Implementamos soluciones de IA para optimizar la producción, gestionar la cadena de suministro,
+                    predecir fallos en maquinaria y mejorar la eficiencia operativa.
+                </p>
+                <p>
+                    <strong>Ejemplo:</strong> Una planta de producción redujo sus costos operativos en un 10% al optimizar
+                    la programación de la producción y el mantenimiento predictivo con IA.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Sobre Nosotros</h2>
+        <p>
+            Somos un equipo de expertos apasionados por la Inteligencia Artificial. En Raíces Inteligentes, nos dedicamos a
+            transformar negocios, impulsar la innovación y construir un futuro más inteligente.
+        </p>
+        <p>
+            Nuestra misión es empoderar a las empresas con soluciones de IA que generen valor real, mejoren la eficiencia y
+            creen una ventaja competitiva sostenible.
+        </p>
+    </section>
+
+    <section id="cases">
+        <h2>Casos de Éxito</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <a href="#">
+                    <h3>Optimización de la Cadena de Suministro</h3>
+                </a>
+                <p>
+                    Desarrollamos un sistema de IA para una empresa de distribución que optimiza las rutas de entrega,
+                    reduce los costos de transporte y mejora la eficiencia logística.
+                </p>
+            </div>
+            <div class="service-card">
+                <a href="#">
+                    <h3>Personalización de la Experiencia del Cliente</h3>
+                </a>
+                <p>
+                    Implementamos un motor de recomendación basado en IA para una plataforma de comercio electrónico,
+                    aumentando las ventas y mejorando la satisfacción del cliente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contáctanos</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo Electrónico" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 Raíces Inteligentes | Contacto: Kevin Haro - 605815637 -
+            <a href="mailto:raicesinteligentes3@gmail.com">raicesinteligentes3@gmail.com</a>
+        </p>
+    </footer>
+
+    <a href="https://wa.me/605815637" class="floating-button whatsapp-button">💬</a>
+    <a href="#" class="floating-button chatbot-button">🤖</a>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raíces Inteligentes - Impulsa tu Futuro con IA</title>
+    <meta name="description"
+        content="Raíces Inteligentes: Soluciones de Inteligencia Artificial para empresas. Automatización, análisis predictivo, y más.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Tus estilos originales van aquí */
+
+        /* Añadido para Blog */
+        #blog {
+            padding: 4rem 0;
+            background-color: #e8f5e9;
+            text-align: center;
+        }
+        #blog .blog-post {
+            margin: 2rem auto;
+            max-width: 600px;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #blog .blog-post h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #1a237e;
+        }
+
+        /* Añadido para Testimonios */
+        #testimonios {
+            background: #f0f4f8;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        #testimonios blockquote {
+            font-style: italic;
+            color: #555;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        #testimonios cite {
+            display: block;
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #1a237e;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Código Original -->
+    
+    <section id="blog">
+        <h2>Blog</h2>
+        <div class="blog-post">
+            <h3>Cómo la Inteligencia Artificial está revolucionando los negocios</h3>
+            <p>Descubre cómo las empresas están aprovechando la IA para transformar sus operaciones...</p>
+            <a href="#">Leer más</a>
+        </div>
+    </section>
+
+    <section id="testimonios">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <blockquote>
+            <p>"Raíces Inteligentes transformó nuestro negocio con soluciones personalizadas de IA."</p>
+            <cite>- María López, CEO de Logística S.A.</cite>
+        </blockquote>
+    </section>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXXXXXX-X');
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raíces Inteligentes - Impulsa tu Futuro con IA</title>
+    <meta name="description"
+        content="Raíces Inteligentes: Soluciones de Inteligencia Artificial para empresas. Automatización, análisis predictivo, y más.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Tus estilos originales van aquí */
+
+        /* Añadido para Blog */
+        #blog {
+            padding: 4rem 0;
+            background-color: #e8f5e9;
+            text-align: center;
+        }
+        #blog .blog-post {
+            margin: 2rem auto;
+            max-width: 600px;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #blog .blog-post h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #1a237e;
+        }
+
+        /* Añadido para Testimonios */
+        #testimonios {
+            background: #f0f4f8;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        #testimonios blockquote {
+            font-style: italic;
+            color: #555;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        #testimonios cite {
+            display: block;
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #1a237e;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Código Original -->
+    
+    <section id="blog">
+        <h2>Blog</h2>
+        <div class="blog-post">
+            <h3>Cómo la Inteligencia Artificial está revolucionando los negocios</h3>
+            <p>Descubre cómo las empresas están aprovechando la IA para transformar sus operaciones...</p>
+            <a href="#">Leer más</a>
+        </div>
+    </section>
+
+    <section id="testimonios">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <blockquote>
+            <p>"Raíces Inteligentes transformó nuestro negocio con soluciones personalizadas de IA."</p>
+            <cite>- María López, CEO de Logística S.A.</cite>
+        </blockquote>
+    </section>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXXXXXX-X');
+    </script>
+</body>
+</html>
+
+</body>
+
+</html>
